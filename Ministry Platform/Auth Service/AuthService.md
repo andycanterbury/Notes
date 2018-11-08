@@ -1,17 +1,17 @@
 # Falcons 
-+ [GoVolunteer](#go-volunteer)
++ [GoVolunteer](#govolunteer)
 + [Payment](#payment)
 + [Camp](#camp)
 + [Trip](#trip)
 + [Childcare](#childcare)
 + [Lookup](#lookup)
 + [Waiver](#waiver)
-+ [Ministry Platform Tools](#mp-tools)
++ [Ministry Platform Tools](#ministry-platform-tools)
 + [Event](#event)
 + [Other](#other)
-+ [Summary](#tldr)
++ [Summary](#summary)
 
-## GoVolunteer {#go-volunteer}
+## GoVolunteer
 Can be broken as it is not in use and we are **planning** to replace it early next year and pull it entirely out of crds-angular. 
 
 - Authorized() used in:
@@ -25,7 +25,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - Skills
         - _skillsService.RetrieveGoSkills()
 
-## Payment {#payment}
+## Payment
 - Authorized() used in:
     - AlreadyPaidDeposit (invoice/{invoiceId}/has-payment)
     - GetPaymentDetails (invoice/{invoiceId}/payment/{paymentId})
@@ -36,7 +36,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - PaymentService.GetPaymentDetails - used to get ContactId and Email Address
     - PaymentService.SendPaymentConfirmation - used to get ContactId and Email Address
     - PaymentService.SendInvoicePaymentConfirmation - used to get ContactId and Email Address
-## Camp {#camp}
+## Camp
 - Authorized() used in:
     - GetCampFamily (camps/{eventId}/family)
     - GetMyCampsInfo (camps/my-camp)
@@ -65,7 +65,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - CampService.SaveCamperEmergencyContactInfo - Used to get HouseholdId and to call GetCamperEmergencyContactInfo, which takes a token and does nothing with it.
     - CampService.SendCampConfirmationEmail - takes a token for no reason
     - CampService.GetCamperEmergencyContactInfo - takes a token for no reason
-## Trip {#trip}
+## Trip
 - Authorized() used in:
     - GetFamilyWithTripInfo (trip/{campaignId}/family-members)
     - ContactHasScholarship (trip/scholarship/{campaignId}/{contactId})
@@ -83,7 +83,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - TripService.GetMyTrips - Calls ServeService.GetImmediateFamilyParticipants which uses it to get ContactId and to call ContactRelationshipRepository and uses the token in a db call. ******* 
     - TripService.ValidatePrivateInvite - Used to get email address
     - TripController.GetLoggedInContact - Used to get logged in contact, duh. 
-## Childcare {#childcare}
+## Childcare
 - Authorized() used in:
     - SaveRsvp (childcare/rsvp)
     - ChildcareEventById (childcare/event/{eventId})
@@ -105,7 +105,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
         - ChildcareService.SendChildcareRequestDecisionNotification - Uses token in ChildcareRequestRepository.GetChildcareRequest to make a db call *******
     - ChildcareService.RejectChildcareRequest - Calls Childcare.Service.SendChildcareRequestDecisionNotification, see above.
     - ChildcareController.ChildcareDashboard - Uses token to get Person object, in which it uses ContactId and HouseholdId
-## Lookup {#lookup}
+## Lookup
 - Authorized() used in:
     - Lookup (lookup/{table?})
     - FindGroups (lookup/group/{congregationId}/{ministryId})
@@ -117,7 +117,7 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
         - GroupsByCongregationAndMinistry()
         - ChildcareTimesByCongregation()
         - EmailSearch()
-## Waiver {#waiver}
+## Waiver
 - Authorized() used in:
     - GetEventWaivers (waivers/event/{eventId})
     - GetWaiver (waivers/{waiverId})
@@ -125,12 +125,12 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
 - User token used in:
     - GetEventWaivers - Used only to get contactId
     - SendAcceptWaiverEmail - Used only to get contactId
-## MinistryPlatformTools {#mp-tools}
+## MinistryPlatformTools
 - Authorized() used in:
     - GetPageSelectionRecordIds (mptools/selection/{selectionId})
 - User token used in:
     - _selectionService.GetSelectionRecordIds - Unclear if user token is needed or if api token can be used. *******
-## Event {#event}
+## Event
 Much of this is for the Create/Edit Event Tool which Falcons don't own -Unless you ask Angie
 - Authorized() used in:
     - RsvpToEvent (event)
@@ -144,10 +144,10 @@ Much of this is for the Create/Edit Event Tool which Falcons don't own -Unless y
         - Heavily used, unsure if user token is needed or if api token can be used. *******
     - GetEventsBySite -Used to get events, should be fine with API token
     - GetEventTemplatesBySite -Same as above. Possibly shared code fixed in one place?
-## Other {#other}
+## Other
 - On-behalf-of functionality currently uses the logged in user's token, but can be made to work with UserID, since that's what the API actually needs. 
 
-# Summary {#tldr}
+# Summary
 |Reason for token|# of updates|Effort|
 |---|:---:|:---:|
 |ContactID| ~12 | S |
