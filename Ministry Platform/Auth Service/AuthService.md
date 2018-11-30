@@ -25,7 +25,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - Skills
         - _skillsService.RetrieveGoSkills()
 
-## Payment -  [US15819](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270375764748)
+## Payment
+[US15819](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270375764748)
 - Authorized() used in:
     - AlreadyPaidDeposit (invoice/{invoiceId}/has-payment)
     - GetPaymentDetails (invoice/{invoiceId}/payment/{paymentId})
@@ -37,7 +38,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - PaymentService.SendPaymentConfirmation - used to get ContactId and Email Address
     - PaymentService.SendInvoicePaymentConfirmation - used to get ContactId and Email Address
 
-## Camp - [US15820](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270377630608)
+## Camp
+[US15820](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270377630608)
 - Authorized() used in:
     - GetCampFamily (camps/{eventId}/family)
     - GetMyCampsInfo (camps/my-camp)
@@ -67,7 +69,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - CampService.SendCampConfirmationEmail - takes a token for no reason
     - CampService.GetCamperEmergencyContactInfo - takes a token for no reason
 
-## Trip - [US15821](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270377660936)
+## Trip
+[US15821](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270377660936)
 - Authorized() used in:
     - GetFamilyWithTripInfo (trip/{campaignId}/family-members)
     - ContactHasScholarship (trip/scholarship/{campaignId}/{contactId})
@@ -86,7 +89,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - TripService.ValidatePrivateInvite - Used to get email address
     - TripController.GetLoggedInContact - Used to get logged in contact, duh. 
 
-## Childcare - [US15822](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270400372936)
+## Childcare
+[US15822](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270400372936)
 - Authorized() used in:
     - SaveRsvp (childcare/rsvp)
     - ChildcareEventById (childcare/event/{eventId})
@@ -109,7 +113,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - ChildcareService.RejectChildcareRequest - Calls Childcare.Service.SendChildcareRequestDecisionNotification, see above.
     - ChildcareController.ChildcareDashboard - Uses token to get Person object, in which it uses ContactId and HouseholdId
 
-## Lookup - [US15823](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270402137652)
+## Lookup
+[US15823](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270402137652)
 - Authorized() used in:
     - Lookup (lookup/{table?})
     - FindGroups (lookup/group/{congregationId}/{ministryId})
@@ -122,7 +127,8 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
         - ChildcareTimesByCongregation()
         - EmailSearch()
 
-## Waiver - [US15824](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270402725452)
+## Waiver
+[US15824](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270402725452)
 - Authorized() used in:
     - GetEventWaivers (waivers/event/{eventId})
     - GetWaiver (waivers/{waiverId})
@@ -131,13 +137,15 @@ Can be broken as it is not in use and we are **planning** to replace it early ne
     - GetEventWaivers - Used only to get contactId
     - SendAcceptWaiverEmail - Used only to get contactId
 
-## MinistryPlatformTools - [US15825](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270404477740)
+## MinistryPlatformTools
+[US15825](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270404477740)
 - Authorized() used in:
     - GetPageSelectionRecordIds (mptools/selection/{selectionId})
 - User token used in:
     - _selectionService.GetSelectionRecordIds - Unclear if user token is needed or if api token can be used. *******
 
-## Event - [US15826](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270405321352)
+## Event 
+[US15826](https://rally1.rallydev.com/#/27593501023d/detail/userstory/270405321352)
 Much of this is for the Create/Edit Event Tool which Falcons do own if you ask Angie
 - Authorized() used in:
     - RsvpToEvent (event)
